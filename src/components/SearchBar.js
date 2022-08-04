@@ -71,7 +71,7 @@ export default function SearchBar({ cityHandler }) {
           paddingVertical: 10,
         }}
       >
-        <View style={{ marginLeft: 10 }}>
+        <View style={{ marginLeft: 10, marginRight: 5 }}>
           <Ionicons name="location-sharp" size={24} />
         </View>
         <TextInput
