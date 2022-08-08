@@ -1,14 +1,14 @@
 import { View, Text, ScrollView } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context"; // This works for Android and iOS
 import React, { useEffect, useState } from "react";
-import HeaderTabs from "../components/HeaderTabs";
-import SearchBar from "../components/SearchBar";
-import Categories from "../components/Categories";
+import HeaderTabs from "../components/home/HeaderTabs";
+import SearchBar from "../components/home/SearchBar";
+import Categories from "../components/home/Categories";
+import BottomTabs from "../components/home/BottomTabs";
 import RestaurantItems, {
   localRestaurants,
-} from "../components/RestaurantItems";
+} from "../components/home/RestaurantItems";
 import { Divider } from "react-native-elements";
-import BottomTabs from "../components/BottomTabs";
 
 const YELP_API_KEY =
   "3QzavjR-7UEJ5mOCJV7DjIx4rizA8EjuggXK8wCtlFzLLzkq5U6sKj0tKnf_S11B1n9bdlGT9nNwwTyoSU4sRlcPPkCBk2e-6APgGAqNSLQ-A_16DBq3Cj-2XLLcYnYx";
