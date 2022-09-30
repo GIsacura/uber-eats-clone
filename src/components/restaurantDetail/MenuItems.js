@@ -1,4 +1,11 @@
-import { View, Text, StyleSheet, Image, ScrollView } from "react-native";
+import {
+	View,
+	Text,
+	StyleSheet,
+	Image,
+	ScrollView,
+	FlatList,
+} from "react-native";
 import React from "react";
 import { Divider } from "react-native-elements";
 import BouncyCheckbox from "react-native-bouncy-checkbox";
@@ -37,30 +44,41 @@ const foods = [
 		price: "$13.50",
 		image: "https://cdn.colombia.com/gastronomia/2011/08/25/lasagna-3685.webp",
 	},
+	{
+		title: "Lasagna",
+		description: "With butter lettuce, tomato and sauce bechamel",
+		price: "$13.50",
+		image: "https://cdn.colombia.com/gastronomia/2011/08/25/lasagna-3685.webp",
+	},
 ];
 
 export default function MenuItems() {
 	return (
-		<ScrollView showsVerticalScrollIndicator={true}>
-			{foods.map((food, index) => (
-				<View key={index}>
-					<View style={styles.menuItemStyle}>
-						<BouncyCheckbox
-							innerIconStyle={{ borderColor: "lightgrey", borderRadius: 0 }}
-							iconStyle={{ borderRadius: 0 }}
-							fillColor="green"
+		<View>
+			<ScrollView
+				style={{ height: "60%" }}
+				showsVerticalScrollIndicator={false}
+			>
+				{foods.map((food, index) => (
+					<View key={index}>
+						<View style={styles.menuItemStyle}>
+							<BouncyCheckbox
+								innerIconStyle={{ borderColor: "lightgrey", borderRadius: 0 }}
+								iconStyle={{ borderRadius: 0 }}
+								fillColor="green"
+							/>
+							<FoodInfo food={food} />
+							<FoodImage image={food.image} />
+						</View>
+						<Divider
+							width={0.5}
+							orientation="vertical"
+							style={{ marginVertical: 20 }}
 						/>
-						<FoodInfo food={food} />
-						<FoodImage image={food.image} />
 					</View>
-					<Divider
-						width={0.5}
-						orientation="vertical"
-						style={{ marginHorizontal: 20 }}
-					/>
-				</View>
-			))}
-		</ScrollView>
+				))}
+			</ScrollView>
+		</View>
 	);
 }
 
