@@ -10,7 +10,6 @@ let cartReducer = (state = defaultState, action) => {
 				items: [...newState.selectedItems.items, action.payload],
 				restaurantName: action.payload.restaurantName,
 			};
-			console.log("👉", newState);
 			return newState;
 		}
 		case "REMOVE_FROM_CART": {
@@ -24,7 +23,6 @@ let cartReducer = (state = defaultState, action) => {
 				restaurantName: action.payload.restaurantName,
 			};
 
-			console.log("👉", newState);
 			return newState;
 		}
 		default:
